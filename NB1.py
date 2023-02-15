@@ -39,7 +39,7 @@ implies that
 P(passing practice interview | passed actual interview) = 95%
 P(passing Practice interview | not passed actual interview)= 5%
 
-2. If PRIOR PROB OF PASSING ACTUAL INTERVIEW is 0.05 (5%),
+2. If PRIOR PROB OF PASSING ACTUAL INTERVIEW is 0.05 (5%), this is our prior belief about passing actual interview..
 implies that
 P(passing actual interview)=5%
 p( not passing actual interview)= 95%
@@ -61,11 +61,23 @@ Substituting the values into the equation:
 
 P(passing Actual_Interview| passed Practice_Interview) = 0.95 * 0.05 / 0.0975 = 0.4736
 so even if you passed a practice interview , and that has 95% accuracy in predicting actual interview performance, the prob of passing actual interview is 47%. given that our prior belief of passing actual interview is 5%.
+
+so we updated our prior belief..of passing actual interview.. with the evidence that we passed practice interview...
+and it came to 47%..
 -------------------------------------------------------------
-
-
-
-
-
-
 '''
+
+
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+X, y = load_iris(return_X_y=True)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=0)
+gnb = GaussianNB()
+y_pred = gnb.fit(X_train, y_train).predict(X_test)
+print("Number of mislabeled points out of a total %d points : %d"
+      % (X_test.shape[0], (y_test != y_pred).sum()))
+
+
+# TO be practiced
+#https://www.datacamp.com/tutorial/naive-bayes-scikit-learn
