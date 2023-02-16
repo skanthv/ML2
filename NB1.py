@@ -1,5 +1,11 @@
 
 '''
+Bayes theorem:
+tells relationship between conditional probabilities
+tells that to find prob of an idea(or hypothesis or statement) given a certain evidence =
+calculate prob of evidence given that idea * prior prob of idea / prior prob of evidence
+P(I|E)= P(E|I)*P(I) / P(E)
+---------------------------------------------------------------
 NAIVE BAYES
 this is classifier
 for linear and non-linear relationships
