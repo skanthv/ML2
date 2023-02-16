@@ -1,11 +1,30 @@
 
 '''
+prior prob= prob of an event such as passing a job interview based on our previous experience with interviews..
+without considering any new information
+posterior prob= prob of that event after considering new information such as getting an email that we are shortlisted
+etc
+--------------------------------
+if a patient comes to doctor ..then doctor based on past experience has a prior prob of that patient having a disease
+then doctor does some tests..
+the confirmation from tests will help to update the prior prob and he gets posterior prob of patient having the disease
+-----------------------------------------
 Bayes theorem:
 tells relationship between conditional probabilities
 tells that to find prob of an idea(or hypothesis or statement) given a certain evidence =
 calculate prob of evidence given that idea * prior prob of idea / prior prob of evidence
 P(I|E)= P(E|I)*P(I) / P(E)
 ---------------------------------------------------------------
+if we are trying to classify whether a patient is diabetic or not ..based on features such as BMI, blood glucose level, insulin level etc
+then these features are dependent on each other...so you cannot assume that they are independent of each other and do the classification..
+so naive bayes will not work in this case and will give inaccurate results
+... in this case we use BAYESIAN NETWORKS.. to model complex dependencies between variables and calculate posterior probabilities
+
+
+if we are trying to classify whether email is spam or not, based on features like no of words in email, presence of words like discount/free etc, no. of links in email etc..
+we can assume that these are independent features and attempt to do the classification..so we can use naive bayes algorithm.
+p(being spam | given that some evidence exists)
+----------------------------------------------
 NAIVE BAYES
 this is classifier
 for linear and non-linear relationships
@@ -19,10 +38,6 @@ often used in text classification problems
 
 limitation:
 it is only estimate based on assumptions.. and the actual result can vary based on uncertainity..and other factors
-
-????
-by making assumption that features are independent of each other..
-then in the formulas where is this used.. are we saying p(a|b)= p(a) etc..anywhere?
 
 if we have limited data and noisy data.. we can use this
 it helps to use our prior belief about an event.. then use the info available now.. and update the belief about that event..
